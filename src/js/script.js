@@ -19,8 +19,8 @@ try {
             clickable: true,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".icon-right-open",
+            prevEl: ".icon-left-open",
         },
         breakpoints: {
             // when window width is >= 1200px
