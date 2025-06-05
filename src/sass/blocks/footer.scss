@@ -4,59 +4,142 @@
     background: $dark;
     margin-top: 60px;
     color: $light;
+    padding: 50px 0;
 
-    &__title {
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 16px;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+        ul {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: $light;
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
     }
 
     &__news {
-        padding-top: 50px;
+        padding-top: 40px;
 
         &-form {
-            padding-top: 40px;
-            font-weight: 400;
-            font-size: 16px;
-        }
-
-        &-form::placeholder {
-            font-weight: 400;
-            font-size: 14px;
-            color: $ui-active;
+            margin-top: 40px;
         }
 
         &__email {
             display: block;
-            border: none;
-            background: $dark;
-            padding-top: 40px;
-            outline: none;
-            border-bottom: 1px solid $ui-active;
+            margin-top: 40px;
             width: 293px;
+            line-height: 32px;
+            background: $dark;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid $light;
+            padding-bottom: 15px;
+            color: $light;
+            cursor: text;
+        }
+
+        &__email::placeholder {
+            color: $ui-active;
+            cursor: pointer;
+            font-size: 14px;
         }
 
         &__check-block {
-            display: flex;
-            align-items: center;
             margin-top: 20px;
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 200%;
+            cursor: pointer;
+            width: 293px;
 
             a {
                 color: #a22dc6;
                 text-decoration: none;
-                margin-left: 2px;
             }
         }
 
         &__checkbox {
             margin-right: 15px;
-            width: 15px;
-            height: 15px;
+        }
+
+        &-btn {
+            margin-top: 20px;
         }
     }
 
-    &__btn {
-        margin-top: 20px;
+    &__navigation {
+        display: flex;
+        column-gap: 66px;
+        flex-wrap: wrap;
+
+        &__discover,
+        &__shopping,
+        &__information {
+            padding-top: 40px;
+        }
+
+        &__discover-links,
+        &__shopping-links,
+        &__information-links {
+            display: flex;
+            row-gap: 20px;
+            padding-top: 40px;
+        }
     }
 
+    &__media {
+        margin-top: 40px;
+
+
+        &__links {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 40px;
+            width: 92px;
+            font-size: 24px;
+
+            a {
+                color: $light;
+            }
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        padding-top: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        color: $light;
+        justify-content: center;
+    }
+
+    &__links__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .footer {
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
 }
