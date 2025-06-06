@@ -1,0 +1,42 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.catalog {
+    margin-top: 50px;
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 13px;
+        column-gap: 50px;
+        margin-top: 60px;
+        padding: 13px 25px;
+        border: 1px solid $dark;
+
+
+    }
+
+    &__tab {
+        text-transform: uppercase;
+        background: none;
+        border: none;
+        font-weight: 500;
+        font-size: 20px;
+        color: #000;
+        cursor: pointer;
+
+        &-active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            margin-top: 1px;
+        }
+    }
+
+
+}
