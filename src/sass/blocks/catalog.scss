@@ -15,8 +15,6 @@
         margin-top: 60px;
         padding: 13px 25px;
         border: 1px solid $dark;
-
-
     }
 
     &__tab {
@@ -24,7 +22,7 @@
         background: none;
         border: none;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 17px;
         color: #000;
         cursor: pointer;
 
@@ -38,5 +36,79 @@
         }
     }
 
+    &__content {
+        margin-top: 60px;
+    }
 
+    &__content-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+    &__content-item {
+        display: block;
+        width: 340px;
+        height: 275px;
+        border: 1px solid $dark;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        background-color: $light;
+
+        img {
+            display: block;
+            width: 340px;
+            height: 198px;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            padding: 11px 0 16.5px 12px;
+            gap: 7px;
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                color: #000;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 768px) {
+    .catalog {
+        position: relative;
+
+        &__tabs {
+            width: 459px;
+        }
+
+        &__content {
+            padding: 10px;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background-color: $dark;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 200px;
+                background-color: $dark;
+            }
+        }
+    }
 }
