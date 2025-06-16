@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import JustValidate from 'just-validate';
 
 import "purecss/build/grids-min.css";
 import "purecss/build/grids-responsive-min.css";
@@ -74,4 +75,91 @@ try {
     contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
 } catch (e) { }
 
-// Обратите внимание, что значение block (в двух местах) можно спокойно поменять на flex, если вам это необходимо
+try {
+    const validator = new JustValidate('form');
+
+    validator
+        .addField('#name', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'minLength',
+                value: 2,
+            },
+        ])
+        .addField('#email', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#quetion', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'minLength',
+                value: 5,
+            },
+        ], {
+            errorsContainer: document.querySelector('#quetion').parentElement.querySelector('.error-message'),
+        })
+        .addField('#checkbox', [
+            {
+                rule: 'required',
+            },
+        ], {
+            errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
+        })
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                body: formData,
+            }).then(res => res.json()).then(data => {
+                console.log("success", data);
+                form.reset();
+            })
+        });
+
+} catch (e) { }
+
+try {
+    const footerValidator = new JustValidate('.footer__form');
+
+    footerValidator
+        .addField('#news__email', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'email',
+            },
+        ], {
+            errorsContainer: document.querySelector('#news__email').parentElement.querySelector('.error-message-footer-email'),
+        })
+        .addField('#footer__check-terms', [
+            {
+                rule: 'required',
+            },
+        ], {
+            errorsContainer: document.querySelector('#footer__check-terms').parentElement.parentElement.querySelector('.checkbox-footer-error-message'),
+        })
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                body: formData,
+            }).then(res => res.json()).then(data => {
+                console.log("success", data);
+                form.reset();
+            })
+        });
+} catch (e) { }

@@ -6,6 +6,14 @@
     color: $light;
     padding: 50px 0;
 
+    .just-validate-error-field {
+        border-bottom: 1px solid $ui-error;
+    }
+
+    &__news__email.just-validate-error-field::placeholder {
+        color: $ui-error;
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: column;

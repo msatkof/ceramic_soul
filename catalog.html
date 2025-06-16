@@ -25,9 +25,9 @@
                     </div>
                     <nav class="header__menu-nav">
                         <ul>
-                            <li><a href="#" class="header__menu-link">catalog</a></li>
-                            <li><a href="#" class="header__menu-link">blog</a></li>
-                            <li><a href="#" class="header__menu-link">about</a></li>
+                            <li><a href="/catalog" class="header__menu-link">catalog</a></li>
+                            <li><a href="/blog" class="header__menu-link">blog</a></li>
+                            <li><a href="/about" class="header__menu-link">about</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -43,9 +43,9 @@
                 </div>
                 <nav class="header__nav">
                     <ul>
-                        <li><a href="#" class="header__link">catalog</a></li>
-                        <li><a href="#" class="header__link">blog</a></li>
-                        <li><a href="#" class="header__link">about</a></li>
+                        <li><a href="/catalog" class="header__link">catalog</a></li>
+                        <li><a href="/blog" class="header__link">blog</a></li>
+                        <li><a href="/about" class="header__link">about</a></li>
                     </ul>
                 </nav>
             </header>
@@ -154,16 +154,18 @@
                     <h3 class="footer__title">newsletter</h3>
 
                     <div class="footer__news-form">
-                        <form action="#">
+                        <form class="footer__form" action="#">
                             <label for="news__email">Keep up to date with news and promotions</label>
                             <input type="email" class="footer__news__email" name="news__email" id="news__email"
                                 placeholder="Enter your email" required>
+                            <div class="error-message-footer-email"></div>
 
                             <label for="footer__check-terms" class="footer__news__check-block">
                                 <input type="checkbox" class="footer__news__checkbox" name="footer__check-terms"
                                     id="footer__check-terms">I agree with the
                                 <a href="#">terms</a>
                             </label>
+                            <div class="checkbox-footer-error-message"></div>
                             <button class="btn-submit footer__news-btn">submit</button>
                         </form>
                     </div>
